@@ -30,5 +30,9 @@ still works correctly. However, do not alter the `Product` class.
 
 ## Final notes
 
-Just for clarification, a product can never have its `price` increase above 50, however **"Mega Coverage"** is a
+- Just for clarification, a product can never have its `price` increase above 50, however **"Mega Coverage"** is a
 legendary product and as such its `price` is 80 and it never alters.
+
+- Feel free to use `Node.js` or the whatever language you want.
+
+- On file `products_after_30_days.txt` you could see the behavior of the products in the period of 30 days. The `Super Sale` product is not working properly. You have to implement it.
