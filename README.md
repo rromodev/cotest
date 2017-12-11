@@ -19,14 +19,14 @@ Pretty simple, right? Well this is where it gets interesting:
 - **"Mega Coverage"**, being a legendary product, never has to be sold or decreases in `price`.
 - **"Special Full Coverage"**, like full coverage, increases in `price` as its `sellIn` value approaches:
 	- `price` increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but.
-	- `price` drops to 0 after the concert (and the product is not valid anymore).
+	- `price` drops to 0 when no more days left (and the product is not valid anymore).
 
 We have recently released a new kind of product *Super Sale product*. This requires an update to our system:
 
 - **"Super Sale"** Products degrade in `price` twice as fast as normal Products.
 
 Feel free to make any changes to the `updatePrice` method and add any new code as long as everything
-still works correctly. However, do not alter the `Product` class.
+still works correctly. However, DO NOT alter the constructor of `Product` class.
 
 ## Final notes
 
