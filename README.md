@@ -1,6 +1,6 @@
 # ComparaOnline Test Requirements Specification
 
-Hi, welcome to the Software Engineer CO Test.
+Hi, welcome to the Software Engineer CO Test. In this test we expect to see your approach to refactor a legacy code into a testeable, object oriented solution.
 
 The code updates the price of products of our business unit, Car Insurance, based on rules explained bellow.
 
@@ -33,6 +33,42 @@ still works correctly. However, DO NOT alter the constructor of `Product` class.
 - Just for clarification, a product can never have its `price` increase above 50, however **"Mega Coverage"** is a
 legendary product and as such its `price` is 80 and it never alters.
 
-- Feel free to use `Node.js` or the whatever language you want.
+- On file `products_after_30_days.txt` you could see the behavior of the products in the period of 30 days. **The `Super Sale` product is not working properly. You have to implement it.**
 
-- On file `products_after_30_days.txt` you could see the behavior of the products in the period of 30 days. The `Super Sale` product is not working properly. You have to implement it.
+## Evaluation rules
+- Design an Object Oriented solution
+- Meaningful git commits, we expect to see your solution approach as commit messages
+- We expect a Node.js (>6) codebase, otherwise you should provide a `Dockerfile` with all the required dependencies to run the required commands.
+- 100% code coverage, you should provide the report and the command to run the tests and get the coverage report.
+
+### Required commands
+- `npm run test`, should run the test suite and display the coverage report
+- `npm run after-30-days`, should display an output similar to `products_after_30_days.txt`
+
+You can use this code snipet as reference to implement the `after-30-days` script.
+
+```js
+const productsAtDayZero = [
+  new Product('Medium Coverage', 10, 20),
+  new Product('Full Coverage', 2, 0),
+  new Product('Low Coverage', 5, 7),
+  new Product('Mega Coverage', 0, 80),
+  new Product('Mega Coverage', -1, 80),
+  new Product('Special Full Coverage', 15, 20),
+  new Product('Special Full Coverage', 10, 49),
+  new Product('Special Full Coverage', 5, 49),
+  new Product('Super Sale', 3, 6),
+];
+
+const carInsurance = new CarInsurance(productsAtDayZero);
+const productPrinter = function (product) {
+  console.log(`${product.name}, ${product.sellIn}, ${product.price}`);
+};
+
+for (let i = 1; i <= 30; i += 1) {
+  console.log(`Day ${i}`);
+  console.log('name, sellIn, price');
+  carInsurance.updatePrice().forEach(productPrinter);
+  console.log('');
+}
+```
