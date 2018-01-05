@@ -2,6 +2,8 @@
 
 Hi, welcome to the Software Engineer CO Test. In this test we expect to see your approach to refactor a legacy code into a testeable, object oriented solution.
 
+### We will only consider your application if you submit your own repository with the proposed solution. Forks or pull requests to our repo will DISCARD your application.
+
 The code updates the price of products of our business unit, Car Insurance, based on rules explained bellow.
 
 Here you have a description of the products.
