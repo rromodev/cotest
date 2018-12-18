@@ -39,6 +39,7 @@ legendary product and as such its `price` is 80 and it never alters.
 
 ## Evaluation rules
 - Design an Object Oriented solution
+- The solution must be scalable, we expect to be able to add new products on the future
 - Meaningful git commits, we expect to see your solution approach as commit messages
 - We expect a Node.js (>6) codebase, otherwise you should provide a `Dockerfile` with all the required dependencies to run the required commands.
 - 100% code coverage, you should provide the report and the command to run the tests and get the coverage report.
