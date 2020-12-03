@@ -11,25 +11,26 @@ class CarInsurance {
     this.products = products;
   }
   updatePrice() {
-    for (var i = 0; i < this.products.length; i++) {
-      this.products[i].sellIn -= 1
+    for(let product of this.products) {
+    
+      product.sellIn -= 1
 
-      switch (this.products[i].name) {
+      switch (product.name) {
         case 'Full Coverage':
-          this.fullCoverage(this.products[i])
+          this.fullCoverage(product)
           break
         case 'Mega Coverage':
-          this.products[i].sellIn += 1
+          product.sellIn += 1
           // do nothing
           break
         case 'Special Full Coverage':
-          this.specialFullCoverage(this.products[i])
+          this.specialFullCoverage(product)
           break
         case 'Super Sale':
-          this.superSale(this.products[i])
+          this.superSale(product)
           break
         default:
-          this.normalCoverage(this.products[i])
+          this.normalCoverage(product)
       }
     }
 
